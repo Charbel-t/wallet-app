@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import ListTransContextProvider from "./ContextsApi/ListTransContext";
+import ListWalletContextProvider from "./ContextsApi/ListWalletContext";
+import IdGeneratorContextProvider from "./ContextsApi/IdGeneratorContext";
 
-function App() {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import 'semantic-ui-css/semantic.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'animate.css/animate.css'
+
+import NoWallet from "./NoWallet/NoWallet";
+import NavBar from "./Components/Navbar/Navbar";
+import Main from "./Main/Main";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <ListWalletContextProvider>
+          <ListTransContextProvider>
+            <IdGeneratorContextProvider>
+              <NavBar />
+              <Route exact path="/" component={NoWallet} />
+              <Route path = "/main/:name"> <Main/> </Route>
+            </IdGeneratorContextProvider>
+          </ListTransContextProvider>
+        </ListWalletContextProvider>
+      </div>
+    </Router>
   );
 }
-
-export default App;
