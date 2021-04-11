@@ -11,7 +11,7 @@ Wallet App is a web based application built with Reactjs. It helps you organizin
 Clone the Github repository and use npm to install the dependencies
 
 ```
-git clone https://github.com/harkibit/wallet-app.git
+git clone https://github.com/Charbel-t/wallet-app.git
 cd wallet-app
 npm i
 npm start
