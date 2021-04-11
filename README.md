@@ -1,6 +1,6 @@
-# AllWallets
+# Wallet App
 
-AllWallets is a web based application built with Reactjs. It helps you organizing your transactions (income, outcome) through adding wallets and transactions correspending to it
+Wallet App is a web based application built with Reactjs. It helps you organizing your transactions (income, outcome) through adding wallets and transactions correspending to it
 
 ## Installation
 
